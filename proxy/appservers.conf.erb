@@ -1,0 +1,6 @@
+<Proxy balancer://appservers>
+    <% @balance_members.each do | member | %>
+      BalancerMember <%= member %>
+    <% end %>
+    ProxySet lbmethod=<%= @lbmethod %>
+</Proxy>
